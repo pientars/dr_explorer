@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<title>Query Results</title>
+  <!-- <script src="d3.v2.min.js"></script> -->
+  <!-- <script src="http://d3js.org/d3.v3.min.js"></script> -->
+  <script src="static/js/d3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/gui.css">
+</head>
+<body>
+  <!-- BODY DIV -->
+<div class="container-fluid dashboard-container"> 
+  <div class="row">
+    <div class="col-sm-2 col-md-2 sidebar">
+      <div class="mini-submenu">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </div>
+      <div class="list-group">
+          <span href="#" class="header-box list-group-item ">
+             <img class="title-img" src="static/img/title.png" alt="DRE">
+              <span class="pull-right" id="slide-submenu">
+                  <i class="fa fa-times"></i>
+              </span>
+          </span>
+          <div class="navbar-collapse collapse sidebar-navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dim. Reduction: <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-header">Linear(ish)</li>
+                  <li><a href="#" id='pca-a'>PCA</a></li>
+                  <li><a id='kpca-a' href="#">Kernel PCA</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nonlinear</li>
+                  <li><a id='mds-a'  href="#">MDS</a></li>
+                  <li><a id='isomap-a'  href="#">Isomap</a></li>
+                  <li><a id='tsne-a'  href="#">t-SNE</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Local Linear Embedding</li>
+                  <li><a id='lle-a'  href="#">Standard</a></li>
+                  <li><a id='ltsa-a'  href="#">LTSA</a></li>
+                  <li><a id='hess-a'  href="#">Hessian</a></li>
+                  <li><a id='llem-a'  href="#">Modified</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+      </div>        
+    </div>
+    <div class="col-md-10 menu">
+      <div class="plot-header">
+        <h2 class="plot-header-text"></h2>  
+      </div>
+      <div class="dr-div"></div>
+    </div>
+  </div>
+</div> 
+
+<!--<script src="/static/js/protos.js"></script>
+<script src="/static/js/table.js"></script>-->
+<script src="/static/js/gui.js"></script>
+<script src="/static/js/config.js"></script>
+<script src="/static/js/mds.js"></script>
+</body>
+</html>
