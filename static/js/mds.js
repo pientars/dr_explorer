@@ -1,7 +1,3 @@
-var margin = {top: 80, right: 25, bottom: 10, left: 25},
-    width  = ($(window).width()-margin.left-margin.right)/2-10,
-    height = ($(window).height()-margin.top-margin.bottom)/2;
-
 var x_value = function(d) { return d[dr_method].x;}, // data -> value
     x_scale = d3.scale.linear().range([0, width]), // value -> display
     x_map = function(d) { return x_scale(x_value(d));}, // data -> display
@@ -80,17 +76,19 @@ function draw_mds_plot(){
 
 
 function result_mouseover(node) {
-
+ draw_hover(node, 200, 300);
 }
 
 function result_mouseout(node) {
+ hide_hover(); 
 }
 
 function draw_hover(nod, delay, duration) {
+  console.log(nod)
   d3.select('#hover')
     .style('display', '')
-    .style("left", (x_map(nod)+55) + "px")
-    .style("top",  y_map(nod)+55 + "px");
+    .style("left", (x_map(nod)+$('.sidebar').width()+120) + "px")
+    .style("top",  y_map(nod)+20 + "px");
   tooltip = d3.select('#hover')
     .append("div")
     .style('fill', 'white')
@@ -108,18 +106,15 @@ function hide_hover() {
 }
 
 function add_hover_content(res) {
+
   var tab = tooltip.append('table')
     .attr('class', 'table table-condensed summary-table')
     .attr('id', 'popup-table');
 
   var headers = tab.append('tr');
-  headers.append('td').text('Name').attr('class', 'bold-font');
-  headers.append('td').text('Type').attr('class', 'bold-font');
-  for (var i = 0; i < res.nodes.length; i++) {
-    var row = tab.append('tr')
-    row.append('td').text(res.nodes[i].name)
-    row.append('td').text(res.nodes[i].label[0].capitalizeFirstLetter())
-  }
+  headers.append('td').text('Name:').attr('class', 'bold-font');
+  headers.append('td').text(res.name);
+  
 }
 
 
