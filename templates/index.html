@@ -8,6 +8,7 @@
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <script src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.8.0/d3-legend.min.js"></script>
   <link rel="stylesheet" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
@@ -33,6 +34,14 @@
           </span>
           <div class="navbar-collapse collapse sidebar-navbar-collapse">
             <ul class="nav navbar-nav">
+              <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="btn btn-primary btn-file">
+                        File<input type="file" multiple="">
+                    </span>
+                </span>
+                <input type="text" class="form-control">
+            </div>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dim. Reduction: <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -50,6 +59,14 @@
                   <li><a id='ltsa-a'  href="#">LTSA</a></li>
                   <li><a id='hess-a'  href="#">Hessian</a></li>
                   <li><a id='llem-a'  href="#">Modified</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Coloring: <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#" id='group-a'>By Exp. Group</a></li>
+                  <li><a href="#" id='vs-a'>Vs</a></li>
+                  <li><a href="#" id='ag-a'>% Ag</a></li>
                 </ul>
               </li>
             </ul>
